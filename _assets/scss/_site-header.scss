@@ -1,0 +1,26 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: var(--border-radius-default, 0.5em);
+
+    @include responsive( tablet-large ) {
+        flex-flow: column wrap;
+        padding: 1em;
+    }
+
+    h1 {
+        a {
+            text-decoration: none;
+            color: #69b83f;
+            padding: 0.1em 0.5em;
+            font-size: 28px;
+            font-family: 'Saira Stencil One', cursive;
+        }
+
+        i {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,223 @@
+.team-container {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        display: block;
+        content: '';
+        padding-top: 20.25%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.form-conrainer {
+    background-color: var(--job-page-bgrd);
+    color: var(--job-page-text-color);
+    padding: 1em;
+
+    @include responsive( desktop ) {
+        font-size: 16px;
+    }
+
+    input {
+        background-color: var(--input-fields-bgrd);
+        border-radius: 0.3em;
+        border: none;
+        padding: 0.2em;
+    }
+
+    .submit-btn {
+        text-align: center;
+
+        p {
+            margin-top: 0.5em;
+        }
+    }
+}
+
+.forms {
+    display: grid;
+    grid-template-columns: 0.5fr 0.8fr;
+    grid-template-rows: repeat(2, 0.2fr);
+    grid-gap: 20px;
+    padding: 1em;
+
+    @include responsive( laptop-large ) {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        .common {
+            order: 1;
+            border-right: none !important;
+            border-bottom: 2px solid #fff;
+            margin-bottom: 0.8em;
+        }
+
+        .personal-info {
+            order: 3;
+            border-top: none !important;
+        }
+
+        .questions {
+            order: 2;
+            border-bottom: var(--border-width-default) solid #fff;
+            margin-bottom: 0.8em;
+        }
+    }
+    
+    .common {
+        grid-column: 1;
+        grid-row: 1;
+        border-right: var(--border-width-default) solid #fff;
+    }
+
+    .personal-info {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        grid-gap: 10px;
+        border-top: var(--border-width-default) solid #fff;
+
+        @include responsive( tablet ) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 100px);
+
+            .phone {
+                grid-column: 1 !important;
+                grid-row: 4 !important;
+            }
+    
+            .security-num {
+                grid-column: 2 !important;
+                grid-row: 4 !important;
+            }
+        }
+
+        @include responsive( phone-large ) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(8, 100px);
+
+            .first-name {
+                grid-row: 1 !important;
+                grid-column: 1 !important;
+            }
+            .middle-name {
+                grid-column: 1 !important;
+                grid-row: 2 !important;
+            }
+            .last-name {
+                grid-column: 1 !important;
+                grid-row: 3 !important;
+            }
+    
+            .city {
+                grid-column: 1 !important;
+                grid-row: 4 !important;
+            }
+    
+            .street {
+                grid-column: 1 !important;
+                grid-row: 5 !important;
+            }
+    
+            .zip {
+                grid-column: 1 !important;
+                grid-row: 6 !important;
+            }
+    
+            .phone {
+                grid-column: 1 !important;
+                grid-row: 7 !important;
+            }
+    
+            .security-num {
+                grid-column: 1 !important;
+                grid-row: 8 !important;
+            }
+        }
+        
+        label {
+            display: block;
+        }
+    
+        input {
+            display: block;
+        }
+
+        .first-name {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .middle-name {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .last-name {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .city {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .street {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .zip {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .phone {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .security-num {
+            grid-column: 3;
+            grid-row: 2;
+        }
+    }
+
+    .questions {
+        grid-column: 2;
+        grid-row: 1;
+
+        @include responsive( tablet ) {
+            span + span {
+                display: block;
+            }
+        }
+
+        div {
+            padding-bottom: 0.5em;
+        }
+
+        p {
+            padding-bottom: 0.5em;
+        }
+
+        span {
+            padding-left: 0.5em;
+        }
+
+        label {
+            padding: 0 0.2em;
+        }
+    }
+}

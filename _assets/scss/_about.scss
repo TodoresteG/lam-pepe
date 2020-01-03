@@ -1,0 +1,93 @@
+.text {
+    background-color: var(--about-text-bgrd);
+    color: var(--about-text-color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0.5em 2em 0 2em;
+    width: 100%;
+
+    @include responsive( laptop ) {
+        flex-flow: column wrap;
+    }
+
+    .history {
+        flex: 0 0 40%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            padding: 0.5em 0;
+            border-bottom: var(--border-width-default, 2px) solid #fff;
+        }
+    }
+
+    .about {
+        flex: 0 0 40%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            padding: 0.5em 0;
+            border-bottom: var(--border-width-default, 2px) solid #fff;
+        }
+    }
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        display: block;
+        content: '';
+        padding-top: 22.34%;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.merits-container {
+    padding: 2em;
+    background-color: #fff;
+    
+    .merits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 0.5fr);
+        grid-gap: 20px;
+        align-items: center;
+
+        @include responsive( desktop ) {
+
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 0.5fr);
+        }
+
+        @include responsive( laptop ) {
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .merit {
+            .number {
+                color: #999;
+            }
+
+            .quality {
+                text-transform: uppercase;
+            }
+        }
+    }
+}

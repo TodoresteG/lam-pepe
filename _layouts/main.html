@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{site.title}}</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
+</head>
+
+<body>
+
+    <div class="site">
+
+        <input type="checkbox" id="toggle-nav" class="toggle-nav">
+        <header class="site-header">
+            <h1 class="site-title">
+                <a href="{{ site.baseurl }}/">{{site.title}}<i class="fas fa-trademark"></i></a>
+            </h1>
+
+            <label for="toggle-nav" class="toggle-nav-btn">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </label>
+            <nav class="site-nav">
+                <ul>
+                    {% for item in site.navigation %}
+                    <li{% if item.url == page.url %} class="selected" {% endif %}>
+
+                        {% if item.text == "Services" %}
+
+                        <span>
+                            {% if item.icon %}<i class="fas {{ item.icon }}"></i>{% endif %}
+                            {{ item.text }}
+
+                            {% if item.items %}
+                            <ul>
+                                {% for subitem in item.items %}
+                                <li{% if subitem.url == page.url %} class="selected" {% endif %}>
+                                    <a href="{{ site.baseurl }}{{ subitem.url }}">
+                                        {% if subitem.icon %}<i class="fas {{ subitem.icon }}"></i>{% endif %}
+                                        {{ subitem.text }}
+                                    </a>
+                                    </li>
+                                    {% endfor %}
+                            </ul>
+                            {% endif %}
+                            </li>
+                        </span>
+                        {% else %}
+                        <a href="{{ site.baseurl }}{{ item.url }}">
+                            {% if item.icon %}<i class="fas {{ item.icon }}"></i>{% endif %}
+                            {{ item.text }}
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+
+        </header>
+
+        <main class="site-main">
+            {% if page.title %}
+            <!-- <h1>{{page.title}}</h1> -->
+            {% endif %}
+
+            {{content}}
+
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+        </main>
+
+        <aside class="site-sidebar">
+
+        </aside>
+
+        <footer class="site-footer">
+            <p>All rights reserved &copy; {{ site.title }}</p>
+
+            <div id="google_translate_element"></div>
+
+            <script type="text/javascript">
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                }
+            </script>
+
+            <script type="text/javascript"
+                src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+            <nav class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://google.com"><i class="fab fa-google"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="../scripts/scroll.js"></script>
+</body>
+
+</html>

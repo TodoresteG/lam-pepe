@@ -1,0 +1,43 @@
+body {
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: var(--body-bgrd-default);
+}
+
+.italic-names {
+    font-style: italic;
+}
+
+.p-ani {
+    animation-duration: 1.3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 100%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+.down-ani {
+    animation-duration: 1s;
+    animation-name: slidedown;
+  }
+  
+  @keyframes slidedown {
+    from {
+      margin-top: 100%;
+      width: 100%; 
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+} 
