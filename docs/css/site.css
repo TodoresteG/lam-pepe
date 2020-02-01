@@ -413,9 +413,6 @@ body {
   grid-template-rows: 100px 1fr;
   grid-gap: 20px;
   text-align: center; }
-  .location-info .call-able {
-    text-decoration: none;
-    color: #fff; }
   @media (max-width: 1040px) {
     .location-info {
       display: block; }

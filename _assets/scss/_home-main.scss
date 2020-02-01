@@ -93,11 +93,6 @@
     grid-gap: 20px;
     text-align: center;
 
-    .call-able {
-        text-decoration: none;
-        color: #fff;
-    }
-
     @include responsive( laptop-large ) {
         display: block;
 
